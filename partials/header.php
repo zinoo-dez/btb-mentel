@@ -49,13 +49,13 @@
                             <a class="nav-link" href="#">Doctor Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Article</a>
+                            <a class="nav-link" href="#article">Article</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
+                            <a class="nav-link" href="#contact-us">Contact Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">

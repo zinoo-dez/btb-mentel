@@ -81,6 +81,20 @@ a.btn.btn-secondary.text-white:hover {
 }
 
 /* swiper end */
+/* contact-us section start */
+.img img {
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display: block;
+    margin: auto;
+}
+
+/* contact-us section end */
+
 /* ******************************************************************************************************************************************************************media-query*************************************************************************************************************************** */
 @media (max-width:660px) {
     .swiper-slide {

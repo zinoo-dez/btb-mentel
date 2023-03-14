@@ -98,7 +98,8 @@ include("./partials/carousel.php");
             </div>
         </div>
     </section>
-    <section id="blog" class="p-lg-5 p-0">
+    <section id="article" class="p-lg-5 p-0">
+        <h1 class="text-center mb-5">Article</h1>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper my-5">
                 <div class="swiper-slide">
@@ -159,6 +160,30 @@ include("./partials/carousel.php");
             </div>
             <div class="swiper-pagination"></div>
         </div>
+    </section>
+    <section>
+        <h1 class="text-center mb-5" id="contact-us">Contact Us</h1>
+        <form action="" method="post" class="w-50 m-auto p-5 shadow-lg">
+            <div class="img">
+                <img src="./Images/Logo.png" width="240" alt="">
+            </div>
+            <div class="mb-3">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="submit" name="submit" class="btn btn-secondary">
+            </div>
+
+        </form>
     </section>
 </main>
 <?php 
