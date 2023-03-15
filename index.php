@@ -1,5 +1,7 @@
 <?php
+session_start();
 include("./partials/header.php");
+include("./partials/navbar.php");
 include("./partials/carousel.php");
 ?>
 <main class="p-lg-5 p-2">
@@ -186,6 +188,6 @@ include("./partials/carousel.php");
         </form>
     </section>
 </main>
-<?php 
+<?php
 include("./partials/footer.php")
 ?>
