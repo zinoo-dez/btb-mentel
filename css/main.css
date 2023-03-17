@@ -103,6 +103,19 @@ li.nav-item.login {
     margin: auto;
 }
 
+/* form section */
+table img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid skyblue;
+    object-fit: cover;
+}
+
+.img-col {
+    display: flex;
+    align-items: center;
+}
 
 /* ******************************************************************************************************************************************************************media-query*************************************************************************************************************************** */
 @media (max-width:660px) {

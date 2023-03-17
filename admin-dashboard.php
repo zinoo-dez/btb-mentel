@@ -52,8 +52,8 @@ include("./partials/header.php");
 
                             <tr class="text-center align-middle">
                                 <th scope="row"> <?= ++$key ?></th>
-                                <td>
-                                    <img src="./photo/<?php echo $doc['photo'] ?>" class="mr-2" width="40" alt="photo">
+                                <td class="img-col">
+                                    <img src="./photo/<?php echo $doc['photo'] ?>" alt="photo">
                                     <?= $doc['name'] ?>
                                 </td>
                                 <td> <?= $doc['phone'] ?></td>
@@ -108,8 +108,8 @@ include("./partials/header.php");
 
                             <tr class="text-center align-middle">
                                 <th scope="row"> <?= ++$key ?></th>
-                                <td>
-                                    <img src="./photo/<?php echo $user['photo'] ?>" class="mr-2" width="40" alt="photo">
+                                <td class="img-col">
+                                    <img src="./photo/<?php echo $user['photo'] ?>" alt="photo">
                                     <?= $user['name'] ?>
                                 </td>
                                 <td> <?= $user['email'] ?></td>
@@ -119,7 +119,7 @@ include("./partials/header.php");
 
                                 <td><a href="files/<?= $user['address'] ?>"> <?= $user['address'] ?></a></td>
 
-                                <td><a href="">
+                                <td><a href="user-edit.php?id=<?= $user['user_id'] ?>">
                                         <div class="btn btn-sm btn-warning">Edit</div>
                                     </a></td>
                                 <td><a href="user-del.php">
