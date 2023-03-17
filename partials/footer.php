@@ -120,8 +120,9 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
@@ -131,6 +132,53 @@
             el: ".swiper-pagination",
             clickable: true,
         },
+    });
+    // doctor delete function
+    $(".doctor-del-btn").click(function() {
+        let id = $(this).attr("id");
+
+        console.log('id :>> ', id);
+        if (confirm('Are you sure to remove this record ?')) {
+
+            $.ajax({
+                type: 'GET',
+                url: 'doctor-del.php',
+                data: {
+                    id: id
+                },
+                error: function() {
+                    alert('Something is wrong');
+                },
+                success: function(data) {
+                    $("#" + id).remove();
+                    alert("Record removed successfully");
+                }
+            });
+        }
+    });
+
+    // user delete function
+    $(".user-del-btn").click(function() {
+        let id = $(this).attr("id");
+
+        console.log('id :>> ', id);
+        if (confirm('Are you sure to remove this record ?')) {
+
+            $.ajax({
+                type: 'GET',
+                url: 'user-del.php',
+                data: {
+                    id: id
+                },
+                error: function() {
+                    alert('Something is wrong');
+                },
+                success: function(data) {
+                    $("#" + id).remove();
+                    alert("Record removed successfully");
+                }
+            });
+        }
     });
 </script>
 </body>

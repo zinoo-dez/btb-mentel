@@ -96,9 +96,9 @@ if (isset($_POST['doctor-submit'])) {
                 </div>
                 <span>You Don't have an account?</span>
                 <button class="btn btn-secondary dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SignUp
-                    </a>
+                    </span>
                     <ul class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="user-signup.php">Normal User</a></li>
                         <li><a class="dropdown-item" href="doctor-signup.php">Doctor</a></li>
@@ -124,9 +124,9 @@ if (isset($_POST['doctor-submit'])) {
                 </div>
                 <span>You Don't have an account?</span>
                 <button class="btn btn-secondary dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         SignUp
-                    </a>
+                    </span>
                     <ul class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="user-signup.php">Normal User</a></li>
                         <li><a class="dropdown-item" href="doctor-signup.php">Doctor</a></li>
