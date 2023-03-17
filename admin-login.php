@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $password = trim(md5($_POST['password']));
     empty($email) ? $errors[] = "email required" : "";
     if (count($errors) === 0) {
-        $sql = "SELECT * FROM users WHERE email = :email";
+        $sql = "SELECT * FROM admin WHERE email = :email";
         if ($smpt = $pdo->prepare($sql)) {
             $smpt->bindParam(":email", $email, PDO::PARAM_STR);
             $email = $email;
@@ -19,9 +19,9 @@ if (isset($_POST['submit'])) {
                         $s_email = $row['email'];
                         $s_password = $row['password'];
                         if ($email === $s_email && $password === $s_password) {
-                            $_SESSION["loggedin"] = true;
+                            $_SESSION["auth"] = true;
                             $_SESSION["name"] = $row['name'];
-                            header("location:index.php");
+                            header("location:admin-dashboard.php");
                         } else {
                             $errors[] = "email and password do not match";
                         }
@@ -35,7 +35,8 @@ if (isset($_POST['submit'])) {
 // include("./partials/carousel.php");
 ?>
 <div class="container w-50 my-5 m-auto ">
-    <form action="doctor-signin.php" method="post" class="shadow-lg p-5 rounded">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="shadow-lg p-5 rounded">
+        <?php include("./errors.php") ?>
         <h2 class="text-center">Admin Login</h2>
         <div class="mb-3">
             <label for="email">Admin Email</label>
