@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT * FROM admin WHERE email = :email";
         if ($smpt = $pdo->prepare($sql)) {
             $smpt->bindParam(":email", $email, PDO::PARAM_STR);
-            $email = $email;
+
             if ($smpt->execute()) {
                 if ($smpt->rowCount() === 1) {
                     if ($row = $smpt->fetch()) {

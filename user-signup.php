@@ -4,7 +4,6 @@ include("./partials/header.php");
 include("./partials/navbar.php");
 $date = new Datetime('now');
 $errors = [];
-// include("./partials/carousel.php");
 if (isset($_POST['submit'])) {
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
@@ -30,11 +29,6 @@ if (isset($_POST['submit'])) {
         if ($stmt = $pdo->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-
-            // Set parameters
-            $email = $email;
-            // print_r($stmt->execute());
-            // die();
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 if ($stmt->rowCount() === 1) {
@@ -57,12 +51,12 @@ if (isset($_POST['submit'])) {
                             // Redirect to login page
                             header("location: signin.php");
                         } else {
-                            $errors[] =  "Oops! Something went wrong. Please try again later.";
+                            $errors[] =  "Oops! Something went wrong. db insert error!.";
                         }
                     }
                 }
             } else {
-                $errors[] = "Oops! Something went wrong. Please try again later.";
+                $errors[] = "Oops! Something went wrong. stmt error occur!.";
             }
         }
     } else {
@@ -78,38 +72,38 @@ if (isset($_POST['submit'])) {
         <h3 class="text-center">User SignUp</h3>
         <div class="mb-3">
             <label for="name">Name</label>
-            <input placeholder="Type Your Name" type="name" name="name" id="name" class="form-control">
+            <input placeholder="Type Your Name" minlength="4" required maxlength="35" type="name" name="name" id="name" class="form-control">
         </div>
         <div class="mb-3">
             <label for="email">Email</label>
-            <input placeholder="Type Your Email" type="email" name="email" id="email" class="form-control">
+            <input placeholder="Type Your Email" type="email" required name="email" id="email" class="form-control">
         </div>
         <div class="mb-3">
             <label for="password">Password</label>
-            <input placeholder="Type Your Password" type="password" name="password" id="password" class="form-control">
+            <input placeholder="Type Your Password" minlength="5" required maxlength="35" type="password" name="password" id="password" class="form-control">
         </div>
         <div class="mb-3">
             <label for="age">Age</label>
-            <input placeholder="Type Your Age" type="number" name="age" id="age" class="form-control">
+            <input placeholder="Type Your Age" type="number" required name="age" id="age" class="form-control">
         </div>
         <div class="mb-3">
             <label for="gender">Gender</label>
-            <select class="form-control" name="gender" id="gender">
+            <select class="form-control" required name="gender" id="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="phone">Phone</label>
-            <input placeholder="Type Your Phone" type="tel" name="phone" id="phone" class="form-control">
+            <input placeholder="Type Your Phone" required type="tel" name="phone" id="phone" class="form-control">
         </div>
         <div class="mb-3">
             <label for="photo">Photo</label>
-            <input type="file" name="photo" accept="image/*" id="photo" class="form-control">
+            <input type="file" name="photo" required accept="image/*" id="photo" class="form-control">
         </div>
         <div class="mb-3">
             <label for="address">Address</label>
-            <textarea placeholder="Type Your Address" type="tel" name="address" id="address" class="form-control"> </textarea>
+            <textarea placeholder="Type Your Address" required type="tel" name="address" id="address" class="form-control"> </textarea>
         </div>
         <div class="mb-3">
             <input type="submit" name="submit" class="btn btn-secondary">
