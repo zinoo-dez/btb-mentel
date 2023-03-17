@@ -1,7 +1,9 @@
       <nav class="navbar navbar-expand-lg navbar-dark px-2 px-lg-5">
           <div class="container-fluid">
               <a class="navbar-brand" href="index.php"><img src="./Images/Logo.png" width="60" alt=""></a>
-              <button class="navbar-toggler text-bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler text-bg-secondary" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
                   <i class="bi bi-list text-white py-4"></i>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -11,7 +13,8 @@
                       </li>
 
                       <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
                               Mentel Health
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -31,17 +34,21 @@
                       <li class="nav-item">
                           <a class="nav-link" href="#contact-us">Contact Us</a>
                       </li>
+                      <?php $auth = isset($_SESSION['auth']) ?>
+                      <?php if ($auth) : ?>
                       <li class="nav-item">
-                          <a class="nav-link" href="admin-login.php">Admin</a>
+                          <a class="nav-link" href="admin-login.php">Admin-Dashboard</a>
                       </li>
+                      <?php endif; ?>
+
                   </ul>
                   <ul class="navbar-nav">
                       <?php $auth = isset($_SESSION['name']) ?>
                       <?php if ($auth) : ?>
-                          <a href="profile.php" class="btn btn-secondary text-white "><?= $_SESSION['name'] ?></a>
-                          <a href="logout.php" class="btn btn-secondary text-white ">Logout</a>
+                      <a href="profile.php" class="btn btn-secondary text-white "><?= $_SESSION['name'] ?></a>
+                      <a href="logout.php" class="btn btn-secondary text-white ">Logout</a>
                       <?php else : ?>
-                          <a href="signin.php" class="btn btn-secondary text-white ">SignIn</a>
+                      <a href="signin.php" class="btn btn-secondary text-white ">SignIn</a>
                       <?php endif; ?>
 
                   </ul>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$auth = isset($_SESSION['auth']);
 include("./database/db.php");
 include("./partials/header.php");
 include("./partials/navbar.php");
@@ -34,28 +35,31 @@ if (isset($_POST['submit'])) {
 
 // include("./partials/carousel.php");
 ?>
-<div class="container w-50 my-5 m-auto ">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="shadow-lg p-5 rounded">
-        <?php include("./errors.php") ?>
-        <h2 class="text-center">Admin Login</h2>
-        <div class="mb-3">
-            <label for="email">Admin Email</label>
-            <input type="email" placeholder="Type Your Email" name="email" id="email" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="password">Admin Password</label>
-            <input type="password" placeholder="Type Your Password" name="password" id="password" class="form-control">
-        </div>
-        <div class="mb-3">
-            <input type="submit" name="submit" class="btn btn-secondary">
-        </div>
+<?php if (!$auth) : ?>
+    <div class="container w-50 my-5 m-auto ">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="shadow-lg p-5 rounded">
+            <?php include("./errors.php") ?>
+            <h2 class="text-center">Admin Login</h2>
+            <div class="mb-3">
+                <label for="email">Admin Email</label>
+                <input type="email" placeholder="Type Your Email" name="email" id="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password">Admin Password</label>
+                <input type="password" placeholder="Type Your Password" name="password" id="password" class="form-control">
+            </div>
+            <div class="mb-3">
+                <input type="submit" name="submit" class="btn btn-secondary">
+            </div>
 
 
-    </form>
+        </form>
 
-</div>
+    </div>
 
-
+<?php else : ?>
+    <?php header("location:admin-dashboard.php") ?>
+<?php endif ?>
 
 
 <?php
