@@ -41,8 +41,14 @@
                   </ul>
                   <ul class="navbar-nav">
                       <?php $auth = isset($_SESSION['name']) ?>
+                      <!-- <?= $_SESSION['user_id'] ?> -->
                       <?php if ($auth) : ?>
-                          <a href="profile.php" class="btn btn-secondary text-white "><?= $_SESSION['name'] ?></a>
+                          <?php $admin = $_SESSION['name'] ?>
+                          <?php if ($admin == "admin") : ?>
+                              <a href="admin/profile.php?id=<?php echo $_SESSION['admin_id'] ?>" class="btn btn-secondary text-white "><?= $admin ?></a>
+                          <?php else : ?>
+                              <a href="profile.php?id=<?php echo $_SESSION['user_id'] ?>" class="btn btn-secondary text-white "><?= $_SESSION['name'] ?></a>
+                          <?php endif ?>
                           <a href="logout.php" class="btn btn-secondary text-white ">Logout</a>
                       <?php else : ?>
                           <a href="signin.php" class="btn btn-secondary text-white ">SignIn</a>

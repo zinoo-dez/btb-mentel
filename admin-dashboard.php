@@ -18,6 +18,7 @@ include("./partials/header.php");
                     </li>
                     <li class="list-group-item"><a href="#doctor"><i class="bi bi-thermometer-high"></i> Doctor</a></li>
                     <li class="list-group-item"><a href="#user"><i class="bi bi-people"></i> User</a></li>
+                    <li class="list-group-item"><a href="create-post.php"><i class="bi bi-people"></i>Create Post</a></li>
 
                 </ul>
             </div>

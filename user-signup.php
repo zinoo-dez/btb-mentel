@@ -3,6 +3,7 @@ include("./database/db.php");
 include("./partials/header.php");
 include("./partials/navbar.php");
 $date = new Datetime('now');
+$now = $date->format('Y-m-d H:i:s');
 $errors = [];
 if (isset($_POST['submit'])) {
     $name = trim($_POST['name']);
@@ -45,8 +46,8 @@ if (isset($_POST['submit'])) {
                         $stmt->bindParam(":photo", $p_name, PDO::PARAM_STR);
                         $stmt->bindParam(":address", $address, PDO::PARAM_STR);
                         $stmt->bindParam(":phone", $phone, PDO::PARAM_STR);
-                        $stmt->bindParam(":created_date", $date->format('Y-m-d H:i:s'), PDO::PARAM_STR);
-                        $stmt->bindParam(":updated_date", $date->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+                        $stmt->bindParam(":created_date", $now, PDO::PARAM_STR);
+                        $stmt->bindParam(":updated_date", $now, PDO::PARAM_STR);
                         if ($stmt->execute()) {
                             // Redirect to login page
                             header("location: signin.php");

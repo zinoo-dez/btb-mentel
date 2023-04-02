@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("./database/db.php");
 include("./partials/header.php");
 include("./partials/navbar.php");
 include("./partials/carousel.php");
@@ -104,25 +105,26 @@ include("./partials/carousel.php");
         <h1 class="text-center mb-5">Article</h1>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper my-5">
-                <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/15.jpeg" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
+
+                <?php
+                $sql = 'SELECT * FROM posts';
+                $statement = $pdo->query($sql);
+                $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+                // print_r($posts);
+                // exit();
+                foreach ($posts as $key => $p) :
+                ?>
+
+                    <div class="swiper-slide">
+                        <div class="swiper-card">
+                            <img src="./Images/<?php echo $p['image'] ?>" alt="image">
+
+                            <h3 class="my-2"><?= $p['title'] ?></h3>
+                            <p><?= $p['content'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/banner-photo3.jpg" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
+                <?php endforeach ?>
+                <!-- <div class="swiper-slide">
                     <div class="swiper-card">
                         <img src="./Images/banner-photo1.jpg" alt="">
                         <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
@@ -157,7 +159,7 @@ include("./partials/carousel.php");
                             officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
                             dolorum natus sunt, enim numquam. Similique, impedit.</p>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <div class="swiper-pagination"></div>

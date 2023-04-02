@@ -20,8 +20,9 @@ if (isset($_POST['submit'])) {
                         $s_email = $row['email'];
                         $s_password = $row['password'];
                         if ($email === $s_email && $password === $s_password) {
-                            $_SESSION["auth"] = true;
+                            $_SESSION["auth"] = "admin";
                             $_SESSION["name"] = $row['name'];
+                            $_SESSION["admin_id"] = $row['admin_id'];
                             header("location:admin-dashboard.php");
                         } else {
                             $errors[] = "email and password do not match";

@@ -21,6 +21,7 @@ if (isset($_POST['user-submit'])) {
                         if ($email === $s_email && $password === $s_password) {
                             $_SESSION["loggedin"] = true;
                             $_SESSION["name"] = $row['name'];
+                            $_SESSION["user_id"] = $row['user_id'];
                             header("location:index.php");
                         } else {
                             $errors[] = "email and password do not match";

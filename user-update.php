@@ -1,8 +1,5 @@
 <?php
-// print_r($_FILES['oldphoto']);
-// print_r($_FILES['photo']);
-// die();
-
+session_start();
 include("./database/db.php");
 
 if (isset($_POST['submit'])) {
@@ -40,6 +37,7 @@ if (isset($_POST['submit'])) {
         // die(123);
         if ($stmt->execute()) {
             // Redirect to login page
+            $_SESSION['name'] = $name;
             header("location: admin-dashboard.php");
         } else {
             echo  "Oops! Something went wrong. db insert error!.";
