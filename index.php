@@ -115,51 +115,16 @@ include("./partials/carousel.php");
                 foreach ($posts as $key => $p) :
                 ?>
 
-                    <div class="swiper-slide">
-                        <div class="swiper-card">
-                            <img src="./Images/<?php echo $p['image'] ?>" alt="image">
+                <div class="swiper-slide">
+                    <div class="swiper-card">
+                        <img src="./Images/<?php echo $p['image'] ?>" alt="image">
 
-                            <h3 class="my-2"><?= $p['title'] ?></h3>
-                            <p><?= $p['content'] ?></p>
-                        </div>
+                        <h3 class="my-2"><?= $p['title'] ?></h3>
+                        <p><?= $p['content'] ?></p>
                     </div>
+                </div>
                 <?php endforeach ?>
-                <!-- <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/banner-photo1.jpg" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/banner-photo2.jpg" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/6666.png" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-card">
-                        <img src="./Images/55.png" alt="">
-                        <h3 class="my-2">Lorem ipsum dolor sit amet.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis consequatur harum,
-                            officiis inventore in vel, dicta, minima numquam neque cupiditate incidunt? Quas ex
-                            dolorum natus sunt, enim numquam. Similique, impedit.</p>
-                    </div>
-                </div> -->
+
 
             </div>
             <div class="swiper-pagination"></div>

@@ -15,21 +15,21 @@
                               Mentel Health
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#">Depression</a></li>
-                              <li><a class="dropdown-item" href="#">Anxiety</a></li>
-                              <li><a class="dropdown-item" href="#">Bipolor</a></li>
-                              <li><a class="dropdown-item" href="#">Adication </a></li>
+                              <li><a class="dropdown-item" href="depression-test.php">Depression</a></li>
+                              <li><a class="dropdown-item" href="anxiety.php">Anxiety</a></li>
+                              <li><a class="dropdown-item" href="bipolar.php">Bipolor</a></li>
+                              <li><a class="dropdown-item" href="adication.php">Adication </a></li>
 
                           </ul>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#">Doctor Gallery</a>
+                          <a class="nav-link" href="doctor-gallery.php">Doctor Gallery</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#article">Article</a>
+                          <a class="nav-link" href="index.php?#article">Article</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#contact-us">Contact Us</a>
+                          <a class="nav-link" href="index.php?#contact-us">Contact Us</a>
                       </li>
                       <?php $auth = isset($_SESSION['auth']) ?>
                       <?php if ($auth) : ?>
