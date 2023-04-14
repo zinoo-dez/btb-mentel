@@ -147,15 +147,17 @@ include("./partials/header.php");
                 </div>
             </section>
             <!-- User section end -->
+            <div class="d-flex">
 
-            <div class="p-3 w-50 m-auto">
-                <div>
-                    <canvas id="myChart"></canvas>
+                <div class="m-3 p-3">
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
-            </div>
-            <div class="p-3 w-50 m-auto">
-                <div>
-                    <canvas id="myChart2"></canvas>
+                <div class="m-3 p-3">
+                    <div>
+                        <canvas id="myChart2"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
