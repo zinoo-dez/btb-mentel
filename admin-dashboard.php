@@ -77,7 +77,7 @@ include("./partials/header.php");
                             </tr>
                             <?php endforeach ?>
 
-
+                            <p id="doctor_count" style="opacity: 0;"><?php echo count($doctors); ?></p>
                         </tbody>
                     </table>
                 </div>
@@ -107,7 +107,7 @@ include("./partials/header.php");
                                 $sql = 'SELECT * FROM users';
                                 $statement = $pdo->query($sql);
                                 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                // print_r($users);
+
                                 // exit();
                                 foreach ($users as $key => $user) :
                                 ?>
@@ -136,6 +136,7 @@ include("./partials/header.php");
 
                             </tr>
                             <?php endforeach ?>
+                            <p id="user_count" style="opacity: 0;"><?php echo count($users); ?></p>
 
 
                         </tbody>
@@ -146,6 +147,17 @@ include("./partials/header.php");
                 </div>
             </section>
             <!-- User section end -->
+
+            <div class="p-3 w-50 m-auto">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <div class="p-3 w-50 m-auto">
+                <div>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -155,6 +167,48 @@ include("./partials/header.php");
 <?php
 include("./partials/footer.php");
 ?>
-<script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script>
+const ctx = document.getElementById('myChart');
+const ctx2 = document.getElementById('myChart2');
+let user_count = document.querySelector("#user_count").innerHTML;
+let doctor_count = document.querySelector("#doctor_count").innerHTML;
+console.log(user_count, doctor_count);
+new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['users', 'doctors', ],
+        datasets: [{
+            label: '# of Votes',
+            data: [user_count, doctor_count],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+new Chart(ctx2, {
+    type: 'polarArea',
+    data: {
+        labels: ['users', 'doctors', ],
+        datasets: [{
+            label: '# of Votes',
+            data: [user_count, doctor_count],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
 </script>
