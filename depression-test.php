@@ -21,7 +21,7 @@ if (isset($_POST['save'])) {
         $stmt->bindParam(":updated_date", $now, PDO::PARAM_STR);
         if ($stmt->execute()) {
             // Redirect to login page
-            header("location: bipolar.php");
+            header("location: depression-test.php");
         } else {
             echo "something wrong!";
         }
